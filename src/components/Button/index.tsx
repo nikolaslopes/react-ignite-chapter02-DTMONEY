@@ -1,11 +1,10 @@
+import { ButtonCustom } from './styles'
 import { IButton } from './types'
 
 export function Button({ text, ...rest }: IButton) {
   return (
-    <>
-      <button type="button" {...rest}>
-        {text}
-      </button>
-    </>
+    <ButtonCustom type="button" {...rest}>
+      {text}
+    </ButtonCustom>
   )
 }
