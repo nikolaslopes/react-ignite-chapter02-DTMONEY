@@ -13,4 +13,8 @@ export const ButtonCustom = styled.button`
   &:hover {
     filter: brightness(0.9);
   }
+
+  &:active {
+    filter: opacity(0.6);
+  }
 `
