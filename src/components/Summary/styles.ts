@@ -25,4 +25,9 @@ export const Box = styled.div`
     font-size: 2rem;
     font-weight: 500;
   }
+
+  :last-child {
+    background-color: var(--green);
+    color: #fff;
+  }
 `
