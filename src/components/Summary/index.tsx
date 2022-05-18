@@ -17,7 +17,7 @@ export function Summary() {
 
       <Box>
         <header>
-          <p></p>
+          <p>Saídas</p>
           <img src={outcomeImg} alt="Saídas" />
         </header>
         <strong>-R$ 500,00</strong>
