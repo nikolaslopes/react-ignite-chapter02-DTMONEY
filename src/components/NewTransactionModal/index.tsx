@@ -1,4 +1,7 @@
 import Modal from 'react-modal'
+import { Button } from '../Button'
+import { Input } from '../Input'
+import { Form } from './styles'
 import { INewTransactionModal } from './types'
 
 Modal.setAppElement('#root')
@@ -9,7 +12,15 @@ export function NewTransactionModal({
 }: INewTransactionModal) {
   return (
     <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
-      <h2>Cadastrar transação</h2>
+      <Form>
+        <h2>Cadastrar transação</h2>
+
+        <Input />
+        <Input />
+        <Input />
+
+        <Button>Cadastrar</Button>
+      </Form>
     </Modal>
   )
 }

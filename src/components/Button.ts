@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { IButton } from './Interfaces/IButton'
 
-export const ButtonCustom = styled.button`
+export const Button = styled.button<IButton>`
   font-size: 1rem;
   color: #fff;
   background-color: var(--blue-light);

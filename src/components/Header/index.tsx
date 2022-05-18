@@ -9,7 +9,7 @@ export function Header({ onOpenNewTransactionModal }: IHeader) {
       <Content>
         <img src={logoImg} alt="dt money" />
 
-        <Button text="Nova Transação" onClick={onOpenNewTransactionModal} />
+        <Button onClick={onOpenNewTransactionModal}>Nova transção</Button>
       </Content>
     </Container>
   )
