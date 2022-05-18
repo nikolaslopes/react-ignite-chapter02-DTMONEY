@@ -24,6 +24,7 @@ export const Box = styled.div`
     margin-top: 1rem;
     font-size: 2rem;
     font-weight: 500;
+    line-height: 3rem;
   }
 
   :last-child {
