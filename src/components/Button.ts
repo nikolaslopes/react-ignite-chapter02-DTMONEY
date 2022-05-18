@@ -4,9 +4,11 @@ import { IButton } from './Interfaces/IButton'
 export const Button = styled.button<IButton>`
   font-size: 1rem;
   color: #fff;
-  background-color: var(--blue-light);
+  background-color: var(
+    ${({ secondaryBgColor }) => (secondaryBgColor ? '--green' : '--blue-light')}
+  );
   border: 0;
-  padding: 0 2rem;
+  width: ${({ width }) => (width ? width : '138px')};
   height: 3rem;
 
   transition: filter 0.2s ease;

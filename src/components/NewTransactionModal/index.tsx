@@ -19,7 +19,7 @@ export function NewTransactionModal({
         <Input />
         <Input />
 
-        <Button>Cadastrar</Button>
+        <Button secondaryBgColor>Cadastrar</Button>
       </Form>
     </Modal>
   )
