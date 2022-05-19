@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { darken } from 'polished'
+import { IRadioBox } from '../../Interfaces/IRadioBox'
 
 export const Content = styled.div`
   .react-modal-close {
@@ -34,12 +35,12 @@ export const TransactionTypeContainer = styled.div`
   gap: 0.5rem;
 `
 
-export const RadioBox = styled.button`
+export const RadioBox = styled.button<IRadioBox>`
   height: 4rem;
   border: 1px solid #d7d7d7;
   border-radius: 0.25rem;
 
-  background-color: transparent;
+  background-color: ${({ isActive }) => (isActive ? '#eee' : 'transparent')};
 
   display: flex;
   align-items: center;
