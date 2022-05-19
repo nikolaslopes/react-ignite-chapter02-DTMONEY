@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { IButton } from './Interfaces/IButton'
+import { IButton } from '../Interfaces/IButton'
 
 export const Button = styled.button<IButton>`
   font-size: 1rem;
