@@ -10,6 +10,7 @@ import outcomeImg from '../../assets/outcome.svg'
 
 import { INewTransactionModal } from './types'
 import { Content, Form, RadioBox, TransactionTypeContainer } from './styles'
+import { api } from '../../services/api'
 
 Modal.setAppElement('#root')
 
@@ -25,12 +26,18 @@ export function NewTransactionModal({
   function handleCreateNewTransaction(event: FormEvent) {
     event.preventDefault()
 
-    console.log({
+    const data = {
       title,
       amount,
       category,
       type,
-    })
+    }
+
+    console.log(data)
+
+    api
+      .post('transactions', data)
+      .then((response) => console.log('post', response.status))
   }
 
   return (
