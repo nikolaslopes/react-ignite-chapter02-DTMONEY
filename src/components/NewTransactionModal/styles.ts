@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { darken } from 'polished'
+import { darken, transparentize } from 'polished'
 import { IRadioBox } from '../../Interfaces/IRadioBox'
 
 export const Content = styled.div`
@@ -35,12 +35,18 @@ export const TransactionTypeContainer = styled.div`
   gap: 0.5rem;
 `
 
+const colors = {
+  green: '#33cc95',
+  red: '#e52e4d',
+}
+
 export const RadioBox = styled.button<IRadioBox>`
   height: 4rem;
   border: 1px solid #d7d7d7;
   border-radius: 0.25rem;
 
-  background-color: ${({ isActive }) => (isActive ? '#eee' : 'transparent')};
+  background-color: ${({ isActive, activeColor }) =>
+    isActive ? transparentize(0.9, colors[activeColor]) : 'transparent'};
 
   display: flex;
   align-items: center;
@@ -50,10 +56,6 @@ export const RadioBox = styled.button<IRadioBox>`
 
   &:hover {
     border-color: ${darken(0.1, '#d7d7d7')};
-  }
-
-  &:active {
-    border-color: ${darken(0.5, '#d7d7d7')};
   }
 
   img {
