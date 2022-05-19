@@ -23,7 +23,7 @@ createServer({
         {
           id: 2,
           title: 'Gift Card',
-          type: 'deposit',
+          type: 'withdraw',
           category: 'Games',
           amount: 100,
           createdAt: new Date('2022-02-12 09:00:00'),
