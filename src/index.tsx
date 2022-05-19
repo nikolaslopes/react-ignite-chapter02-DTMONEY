@@ -9,6 +9,29 @@ createServer({
     transaction: Model,
   },
 
+  seeds(server) {
+    server.db.loadData({
+      transactions: [
+        {
+          id: 1,
+          title: 'Gift Card',
+          type: 'deposit',
+          category: 'Games',
+          amount: 100,
+          createdAt: new Date('2022-02-12 09:00:00'),
+        },
+        {
+          id: 2,
+          title: 'Gift Card',
+          type: 'deposit',
+          category: 'Games',
+          amount: 100,
+          createdAt: new Date('2022-02-12 09:00:00'),
+        },
+      ],
+    })
+  },
+
   routes() {
     this.namespace = 'api'
 
