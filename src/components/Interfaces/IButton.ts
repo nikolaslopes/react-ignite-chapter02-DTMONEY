@@ -1,4 +1,4 @@
 export interface IButton {
   width?: string
-  secondaryBgColor?: boolean
+  secondaryStyle?: boolean
 }

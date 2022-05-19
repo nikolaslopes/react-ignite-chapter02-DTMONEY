@@ -24,7 +24,7 @@ export function NewTransactionModal({
         <Input placeholder="Valor" />
         <Input placeholder="Categoria" />
 
-        <Button secondaryBgColor>Cadastrar</Button>
+        <Button secondaryStyle>Cadastrar</Button>
       </Form>
     </Modal>
   )
