@@ -17,7 +17,7 @@ createServer({
           title: 'Gift Card',
           type: 'deposit',
           category: 'Games',
-          amount: 100,
+          amount: 300,
           createdAt: new Date('2022-02-12 09:00:00'),
         },
         {
