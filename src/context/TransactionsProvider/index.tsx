@@ -4,9 +4,12 @@ import {
   ITransactions,
   ITransactionsProvider,
   ITransactionInput,
+  ITransactionsContext,
 } from './types'
 
-export const TransactionsContext = createContext<ITransactions[]>([])
+export const TransactionsContext = createContext<ITransactionsContext>(
+  {} as ITransactionsContext
+)
 
 export function TransactionsProvider({ children }: ITransactionsProvider) {
   const [transactions, setTransactions] = useState<ITransactions[]>([])
@@ -22,7 +25,7 @@ export function TransactionsProvider({ children }: ITransactionsProvider) {
   }
 
   return (
-    <TransactionsContext.Provider value={transactions}>
+    <TransactionsContext.Provider value={{ transactions, createTransaction }}>
       {children}
     </TransactionsContext.Provider>
   )
