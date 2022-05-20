@@ -29,6 +29,10 @@ export function NewTransactionModal({
 
     await createTransaction({ title, amount, category, type })
 
+    setTitle('')
+    setAmount(0)
+    setCategory('')
+    setType('deposit')
     onRequestClose()
   }
 
