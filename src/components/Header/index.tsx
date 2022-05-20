@@ -1,7 +1,9 @@
 import { Button } from '../Button'
-import logoImg from '../../assets/logo.svg'
-import { Container, Content } from './styles'
 import { IHeader } from './types'
+
+import logoImg from '../../assets/logo.svg'
+
+import { Container, Content } from './styles'
 
 export function Header({ onOpenNewTransactionModal }: IHeader) {
   return (
