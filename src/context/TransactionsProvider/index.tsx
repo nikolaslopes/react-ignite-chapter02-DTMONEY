@@ -20,10 +20,8 @@ export function TransactionsProvider({ children }: ITransactionsProvider) {
       .then(({ data }) => setTransactions(data.transactions))
   }, [])
 
-  function createTransaction(transaction: ITransactionInput) {
-    api.post('transactions', transaction)
-
-    console.log('a', transaction)
+  async function createTransaction(transaction: ITransactionInput) {
+    await api.post('transactions', transaction)
   }
 
   return (
