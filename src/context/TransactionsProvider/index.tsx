@@ -22,6 +22,8 @@ export function TransactionsProvider({ children }: ITransactionsProvider) {
 
   function createTransaction(transaction: ITransactionInput) {
     api.post('transactions', transaction)
+
+    console.log('a', transaction)
   }
 
   return (

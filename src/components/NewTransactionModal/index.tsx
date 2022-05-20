@@ -9,6 +9,7 @@ import incomeImg from '../../assets/income.svg'
 import outcomeImg from '../../assets/outcome.svg'
 
 import { Content, Form, RadioBox, TransactionTypeContainer } from './styles'
+import { useTransactions } from '../../context/TransactionsProvider/useTransactions'
 
 Modal.setAppElement('#root')
 
@@ -16,13 +17,17 @@ export function NewTransactionModal({
   isOpen,
   onRequestClose,
 }: INewTransactionModal) {
+  const { createTransaction } = useTransactions()
+
   const [title, setTitle] = useState('')
-  const [amount, setAmount] = useState('')
+  const [amount, setAmount] = useState(0)
   const [category, setCategory] = useState('')
   const [type, setType] = useState('deposit')
 
   function handleCreateNewTransaction(event: FormEvent) {
     event.preventDefault()
+
+    createTransaction({ title, amount, category, type })
   }
 
   return (
@@ -52,8 +57,9 @@ export function NewTransactionModal({
 
           <Input
             placeholder="Valor"
+            type="number"
             value={amount}
-            onChange={(event) => setAmount(event.target.value)}
+            onChange={(event) => setAmount(Number(event.target.value))}
           />
 
           <TransactionTypeContainer>
