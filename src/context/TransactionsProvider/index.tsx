@@ -21,7 +21,14 @@ export function TransactionsProvider({ children }: ITransactionsProvider) {
   }, [])
 
   async function createTransaction(transaction: ITransactionInput) {
-    await api.post('transactions', transaction)
+    const { data } = await api.post('transactions', {
+      ...transaction,
+      createdAt: new Date(),
+    })
+
+    console.log(data.transaction)
+
+    setTransactions([...transactions, data.transaction])
   }
 
   return (
