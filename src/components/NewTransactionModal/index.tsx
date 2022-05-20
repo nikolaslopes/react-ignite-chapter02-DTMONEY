@@ -33,8 +33,6 @@ export function NewTransactionModal({
       type,
     }
 
-    console.log(data)
-
     api
       .post('transactions', data)
       .then((response) => console.log('post', response.status))
@@ -43,6 +41,7 @@ export function NewTransactionModal({
   return (
     <Modal
       isOpen={isOpen}
+      onRequestClose={onRequestClose}
       overlayClassName="react-modal-overlay"
       className="react-modal-content"
     >
