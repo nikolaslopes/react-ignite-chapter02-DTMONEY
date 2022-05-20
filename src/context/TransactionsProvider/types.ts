@@ -15,5 +15,5 @@ export type ITransactionInput = Omit<ITransactions, 'id' | 'createdAt'>
 
 export interface ITransactionsContext {
   transactions: ITransactions[]
-  createTransaction: (transaction: ITransactionInput) => void
+  createTransaction: (transaction: ITransactionInput) => Promise<void>
 }
