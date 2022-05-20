@@ -1,7 +1,10 @@
 import { createContext, useEffect, useState } from 'react'
-import { ITransactions } from '../../Interfaces/ITransactions'
 import { api } from '../../services/api'
-import { ITransactionsProvider } from './types'
+import {
+  ITransactions,
+  ITransactionsProvider,
+  ITransactionInput,
+} from './types'
 
 export const TransactionsContext = createContext<ITransactions[]>([])
 
@@ -13,6 +16,10 @@ export function TransactionsProvider({ children }: ITransactionsProvider) {
       .get('transactions')
       .then(({ data }) => setTransactions(data.transactions))
   }, [])
+
+  function createTransaction(transaction: ITransactionInput) {
+    api.post('transactions', transaction)
+  }
 
   return (
     <TransactionsContext.Provider value={transactions}>
